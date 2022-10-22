@@ -1,0 +1,18 @@
+{
+  "name": "dinder-backend",
+  "version": "1.0.0",
+  "description": "backend for dinder",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Aashiq Mortimer, Alessandro Algar, Rosie Morris, Zoe Matthews",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.6.7",
+    "nodemon": "^2.0.20"
+  }
+}
