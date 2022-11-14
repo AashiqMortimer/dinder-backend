@@ -1,8 +1,9 @@
 import mongoose from 'mongoose'
 
 const cardSchema = mongoose.Schema({
-    name: String,
-    imgUrl: String
+    iD: String,
+    title: String,
+    image: String,
 })
 
 export default mongoose.model('cards', cardSchema)
