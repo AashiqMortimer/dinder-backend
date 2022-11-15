@@ -2,6 +2,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import Cards from "./dbCards.js";
+import Users from "./dbUsers.js";
 import Cors from 'cors';
 
 // App Config
@@ -33,6 +34,28 @@ app.post('/card', (req, res) => {
 
 app.get('/card', (req, res) => {
     Cards.find((err, data) => {
+        if (err) {
+            res.status(500).send(err)
+        } else {
+            res.status(200).send(data)
+        }
+    })
+})
+
+app.post('/user', (req, res) => {
+    const dbUser = req.body;
+
+    Users.create(dbUser, (err, data) => {
+        if (err) {
+            res.status(500).send(err)
+        } else {
+            res.status(201).send(data)
+        }
+    })
+})
+
+app.get('/user', (req, res) => {
+    Users.find((err, data) => {
         if (err) {
             res.status(500).send(err)
         } else {
