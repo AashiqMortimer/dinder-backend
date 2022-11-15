@@ -2,7 +2,6 @@ import mongoose from 'mongoose'
 
 const cardSchema = mongoose.Schema({
     _id: String,
-    id: String, 
     title: String,
     image: String,
 })
