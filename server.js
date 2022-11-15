@@ -42,6 +42,16 @@ app.get('/card', (req, res) => {
     })
 })
 
+app.get('/card/:mealID', (req, res) => {
+    return Cards.find({mealID: req.params.mealID})
+    .then(function(cards){
+        res.send(cards);
+    })
+    .catch(function(err){
+        console.log(err)
+    });
+}) //allows searching by meal ID
+
 app.post('/users', (req, res) => {
     const dbUsers = req.body;
 
@@ -72,7 +82,7 @@ app.get('/users/:userID', (req, res) => {
     .catch(function(err){
         console.log(err)
     });
-})
+}) //allows searching by user ID
 
 //Listener
 app.listen(port, () => console.log(`Listening on localhost: ${port}`));
