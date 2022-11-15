@@ -42,10 +42,10 @@ app.get('/card', (req, res) => {
     })
 })
 
-app.post('/user', (req, res) => {
-    const dbUser = req.body;
+app.post('/users', (req, res) => {
+    const dbUsers = req.body;
 
-    Users.create(dbUser, (err, data) => {
+    Users.create(dbUsers, (err, data) => {
         if (err) {
             res.status(500).send(err)
         } else {
@@ -54,7 +54,7 @@ app.post('/user', (req, res) => {
     })
 })
 
-app.get('/user', (req, res) => {
+app.get('/users', (req, res) => {
     Users.find((err, data) => {
         if (err) {
             res.status(500).send(err)
