@@ -64,5 +64,15 @@ app.get('/users', (req, res) => {
     })
 })
 
+app.get('/users/:userID', (req, res) => {
+    return Users.find({userID: req.params.userID})
+    .then(function(users){
+        res.send(users);
+    })
+    .catch(function(err){
+        console.log(err)
+    });
+})
+
 //Listener
 app.listen(port, () => console.log(`Listening on localhost: ${port}`));
