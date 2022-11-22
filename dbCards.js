@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 
 const cardSchema = mongoose.Schema({
-    id: String,
-    mealID: String,
+    _id: String, //mongo picks this
+    id: String, // this is the API id
     title: String,
     image: String,
 
