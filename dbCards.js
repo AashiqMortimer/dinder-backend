@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 
 const cardSchema = mongoose.Schema({
     id: String, 
+    userID: String,
     title: String,
     image: String,
     sourceUrl: String,
