@@ -94,15 +94,6 @@ app.get('/users', (req, res) => {
         });
 }) //allows searching by user ID*/
 
-app.get('/users/:userType', (req, res) => {
-    return Users.find({ userType: req.params.userType })
-        .then(function (users) {
-            res.send(users);
-        })
-        .catch(function (err) {
-            console.log(err)
-        });
-}) //allows searching by user ID
 
 //Listener
 app.listen(port, () => console.log(`Listening on localhost: ${port}`));
