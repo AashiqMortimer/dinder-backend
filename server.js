@@ -84,7 +84,7 @@ app.get('/users', (req, res) => {
     })
 })
 
-/*app.get('/users/:userID', (req, res) => {
+app.get('/users/:userID', (req, res) => {
     return Users.find({ userID: req.params.userID })
         .then(function (users) {
             res.send(users);
@@ -92,7 +92,7 @@ app.get('/users', (req, res) => {
         .catch(function (err) {
             console.log(err)
         });
-}) //allows searching by user ID*/
+}) //allows searching by user ID
 
 
 //Listener
