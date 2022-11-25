@@ -42,8 +42,8 @@ app.get('/card', (req, res) => {
     })
 })
 
-app.get('/card/:userID', (req, res) => {
-    return Cards.find({ userID: req.params.userID })
+app.get('/card/:id', (req, res) => {
+    return Cards.find({ id: req.params.id })
         .then(function (cards) {
             res.send(cards);
         })
