@@ -53,7 +53,7 @@ app.get('/card/:id', (req, res) => {
 }) //allows searching by meal ID
 
 app.get('/card/:userID', (req, res) => {
-    return Cards.find({userID: req.params.userID})
+    return Cards.find({id: req.params.userID})
     .then(function(cards){
         res.send(cards);
     })
