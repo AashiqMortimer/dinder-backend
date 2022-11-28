@@ -56,7 +56,7 @@ const userSchema = mongoose.Schema(
 
     //Password Encryption:
 
-userSchema.pre("save", async function (next) {
+/*userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) {
       next();
     }
@@ -68,6 +68,6 @@ userSchema.pre("save", async function (next) {
   //Password Decryption:
   userSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password);
-  };
+  };*/
 
 export default mongoose.model('users', userSchema)
