@@ -1,8 +1,14 @@
 import mongoose from 'mongoose'
 
 const userSchema = mongoose.Schema({
+    userName: String,
     userID: String,
-    userType: String,
+    pic: String,
+    isAdmin: {
+        type: Boolean,
+        required: true,
+        default: false,
+      },
     userEmail: String,
     userPassword: String,
     apiKey: String,
