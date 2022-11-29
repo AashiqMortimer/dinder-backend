@@ -102,7 +102,17 @@ app.get('/users/:userEmail', (req, res) => {
         .catch(function (err) {
             console.log(err)
         });
-}) //allows searching by user email
+}) //allows searching by user email. does not work
+
+app.get('/users/:userName', (req, res) => {
+    return Users.find({ userName: req.params.userName})
+        .then(function (users) {
+            res.send(users);
+        })
+        .catch(function (err) {
+            console.log(err)
+        });
+    })
 
 
 //Listener
