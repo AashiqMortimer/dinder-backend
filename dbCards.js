@@ -1,15 +1,15 @@
 import mongoose from 'mongoose'
 
 const cardSchema = mongoose.Schema({
-    id: String,
-    userID: String,
-    title: String, 
-    image: String,
-    sourceURL: String,
-    cookTime: String,
-    servings: String
-})
-   /* {
+    //id: String,
+   // userID: String,
+   // title: String, 
+   // image: String,
+    //sourceURL: String,
+   // cookTime: String,
+   // servings: String
+//})
+
         id: {
             type: String,
             required: true,
@@ -42,6 +42,6 @@ const cardSchema = mongoose.Schema({
 
     }, {
     timestamps: true,
-})*/
+})
 
 export default mongoose.model('cards', cardSchema)
