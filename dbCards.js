@@ -1,15 +1,6 @@
 import mongoose from 'mongoose'
 
 const cardSchema = mongoose.Schema({
-    //id: String,
-   // userID: String,
-   // title: String, 
-   // image: String,
-    //sourceURL: String,
-   // cookTime: String,
-   // servings: String
-//})
-
         id: {
             type: String,
             required: true,
