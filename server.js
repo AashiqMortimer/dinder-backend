@@ -102,7 +102,7 @@ app.get('/users/:userEmail', (req, res) => {
         .catch(function (err) {
             console.log(err)
         });
-}) //allows searching by user ID
+}) //allows searching by user email
 
 
 //Listener
