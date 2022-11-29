@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
-//import bcrypt from 'bcryptjs';
+
+function userID(){
+  return Math.floor(Math.random()*9000-1000)
+}
 
 const userSchema = mongoose.Schema(
     {
@@ -11,7 +14,7 @@ const userSchema = mongoose.Schema(
             type: String,
             required: true,
             unique: true,
-            default: "0000",
+            default: userID(),
         },
         userEmail: {
           type: String,
@@ -21,7 +24,7 @@ const userSchema = mongoose.Schema(
         userPassword: {
           type: String,
           required: true,
-        },
+        }, //should be encrypted
         apiKey: {
             type: String,
             required: true, 
