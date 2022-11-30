@@ -14,7 +14,8 @@ app.use(express.json());
 app.use(Cors());
 
 //DB Config
-mongoose.connect(connection_url)
+const conn = await mongoose.connect(connection_url)
+console.log("Database connected: ", conn.connection.host)
 
 //API Endpoints
 app.get('/', (req, res) => res.status(200).send('Hello Dunder'));
@@ -50,16 +51,6 @@ app.get('/card/:id', (req, res) => {
         console.log(err)
     });
 }) //allows searching by meal ID
-
-app.get('/card/:userID', (req, res) => {
-    return Cards.find({userID: req.params.userID})
-    .then(function(cards){
-        res.send(cards);
-    })
-    .catch(function(err){
-        console.log(err)
-    });
-}) //allows searching by user ID
 
 app.post('/users', (req, res) => {
     const dbUsers = req.body;
