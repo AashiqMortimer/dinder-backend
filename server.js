@@ -14,8 +14,7 @@ app.use(express.json());
 app.use(Cors());
 
 //DB Config
-const conn = await mongoose.connect(connection_url)
-console.log("Database connected: ", conn.connection.host)
+mongoose.connect(connection_url)
 
 //API Endpoints
 app.get('/', (req, res) => res.status(200).send('Hello Dunder'));
@@ -42,24 +41,24 @@ app.get('/card', (req, res) => {
     })
 })
 
-app.get('/card/:id', (req, res) => {
-    return Cards.find({id: req.params.id})
-    .then(function(cards){
-        res.send(cards);
-    })
-    .catch(function(err){
-        console.log(err)
-    });
+app.get('/card/:userID', (req, res) => {
+    return Cards.find({ userID: req.params.userID })
+        .then(function (cards) {
+            res.send(cards);
+        })
+        .catch(function (err) {
+            console.log(err)
+        });
 }) //allows searching by meal ID
 
 app.get('/card/:userID', (req, res) => {
-    return Cards.find({userID: req.params.userID})
-    .then(function(cards){
-        res.send(cards);
-    })
-    .catch(function(err){
-        console.log(err)
-    });
+    return Cards.find({ userID: req.params.userID })
+        .then(function (cards) {
+            res.send(cards);
+        })
+        .catch(function (err) {
+            console.log(err)
+        });
 }) //allows searching by user ID
 
 app.post('/users', (req, res) => {
@@ -85,14 +84,15 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/users/:userID', (req, res) => {
-    return Users.find({userID: req.params.userID})
-    .then(function(users){
-        res.send(users);
-    })
-    .catch(function(err){
-        console.log(err)
-    });
+    return Users.find({ userID: req.params.userID })
+        .then(function (users) {
+            res.send(users);
+        })
+        .catch(function (err) {
+            console.log(err)
+        });
 }) //allows searching by user ID
+
 
 //Listener
 app.listen(port, () => console.log(`Listening on localhost: ${port}`));
