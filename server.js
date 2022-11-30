@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(Cors());
 
 //DB Config
-mongoose.connect(connection_url, { useNewUrlParser: true})
+mongoose.connect(connection_url)
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
