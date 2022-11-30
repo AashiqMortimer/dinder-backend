@@ -14,13 +14,13 @@ app.use(express.json());
 app.use(Cors());
 
 //DB Config
-mongoose.connect(connection_url, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(connection_url, { useNewUrlParser: true})
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 //Compile models
-const CardModel = mongoose.model("CardModel", Cards);
-const UserModel = mongoose.model("UserModel", Users);
+//const CardModel = mongoose.model("CardModel", Cards);
+//const UserModel = mongoose.model("UserModel", Users);
 
 //API Endpoints
 app.get('/', (req, res) => res.status(200).send('Hello Dunder'));
