@@ -1,10 +1,14 @@
 import mongoose from 'mongoose'
-
+/*const cardSchema = mongoose.Schema({
+    id: String,
+    userID: String,
+    title: String, 
+    image: String,
+    sourceURL: String,
+    cookTime: String,
+    servings: String
+})*/
 const cardSchema = mongoose.Schema({
-    userID: {
-        type: String,
-        required: true,
-    },
     id: {
         type: String,
         required: true,
@@ -30,7 +34,10 @@ const cardSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-
+    userID: {
+        type: String,
+        required: true,
+    },
 }, {
     timestamps: true,
 })
